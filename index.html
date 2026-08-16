@@ -1,271 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="google-site-verification" content="Za1pEupQLM-LlPnODka_5pMgrC6DyOzmuDaZBepfg7Q" />
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Neon Overdrive | High Speed Edition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags for GSC -->
+    <title>Download YouTube App - Official Hello0 Release</title>
+    <meta name="title" content="Download YouTube App - Official Hello0 Release">
+    <meta name="description" content="Download the latest version of our YouTube App directly from GitHub. Fast, secure, and open-source release (Hello0).">
+    <meta name="keywords" content="YouTube app, download, github release, Nitesh99390, video tool, Hello0">
+    <meta name="author" content="Nitesh99390">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Apna real domain name yahan change karna GSC indexing ke liye -->
+    <link rel="canonical" href="https://yourwebsite.com">
+
+    <!-- Open Graph / Facebook / WhatsApp (Social Sharing) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:title" content="Download YouTube App - Official Hello0 Release">
+    <meta property="og:description" content="Download the latest version of our YouTube App directly from GitHub.">
+    
+    <!-- Google Rich Results / Schema Markup (Very Important for GSC) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "YouTube App",
+      "operatingSystem": "Android, Windows",
+      "applicationCategory": "MultimediaApplication",
+      "author": {
+        "@type": "Person",
+        "name": "Nitesh"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body, html { width: 100%; height: 100%; overflow: hidden; background: #000; font-family: 'Courier New', monospace; user-select: none; touch-action: none; }
-        canvas { display: block; width: 100vw; height: 100vh; }
-        #menu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, #1a0033 0%, #000 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 100; gap: 20px; padding: 20px; }
-        .menu-hidden { display: none !important; }
-        .menu-title { font-size: clamp(24px, 8vw, 60px); color: #00f2ff; text-shadow: 0 0 30px #00f2ff; letter-spacing: 3px; text-align: center; }
-        .car-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; max-width: 500px; }
-        .car-option { border: 2px solid #00f2ff; padding: 10px; background: rgba(0, 242, 255, 0.1); border-radius: 10px; cursor: pointer; text-align: center; transition: 0.3s; }
-        .car-option.selected { border-color: #ffff00; box-shadow: 0 0 20px #ffff00; transform: scale(1.05); }
-        .difficulty-selector { display: flex; gap: 10px; }
-        .difficulty-btn { padding: 8px 15px; border: 2px solid #00f2ff; background: rgba(0, 242, 255, 0.1); color: #00f2ff; cursor: pointer; border-radius: 5px; }
-        .difficulty-btn.selected { border-color: #ffff00; background: rgba(255, 255, 0, 0.2); color: #ffff00; }
-        .start-btn { padding: 15px 40px; font-size: 18px; border: 2px solid #00f2ff; background: rgba(0, 242, 255, 0.1); color: #00f2ff; cursor: pointer; border-radius: 5px; }
-        #score-display { position: fixed; top: 20px; width: 100%; text-align: center; font-size: 50px; font-weight: bold; color: #ffff00; text-shadow: 0 0 20px #ffff00; pointer-events: none; z-index: 5; }
-        #hud { position: fixed; bottom: 20px; left: 20px; z-index: 10; }
-        .control-btn { padding: 15px; border: 2px solid #00f2ff; background: rgba(0, 0, 0, 0.5); color: #00f2ff; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; }
-        #game-over-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; align-items: center; justify-content: center; z-index: 50; }
-        .game-over-content { border: 2px solid #ff00ff; padding: 30px; background: #000; text-align: center; width: 100%; max-width: 350px; color: #00f2ff; border-radius: 15px; }
+        /* Modern & Responsive CSS */
+        :root {
+            --bg-color: #0f0f0f;
+            --text-color: #ffffff;
+            --primary-color: #ff0000;
+            --card-bg: #202020;
+            --border-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Download Button Styling */
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .download-btn:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .download-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            gap: 20px;
+        }
+
+        .feature-box {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            flex: 1;
+            min-width: 250px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-box h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .feature-box p {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+            color: #777777;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .hero-section h2 { font-size: 1.5rem; }
+            .features { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
 
-    <div id="menu">
-        <h1 class="menu-title">NEON OVERDRIVE</h1>
-        <div class="car-selector" id="carSelector"></div>
-        <div class="difficulty-selector">
-            <button class="difficulty-btn selected" data-difficulty="NORMAL">NORMAL</button>
-            <button class="difficulty-btn" data-difficulty="HARD">HARD</button>
-            <button class="difficulty-btn" data-difficulty="INSANE">INSANE</button>
+    <header>
+        <h1>YouTube Release</h1>
+    </header>
+
+    <main class="container">
+        <div class="hero-section">
+            <h2>Download Version: Hello0</h2>
+            <p>Get the latest official release directly from the GitHub repository. It's fast, optimized, and ready to use on your device.</p>
+            
+            <!-- Yahan tumhara GitHub ka download link hai -->
+            <a href="https://github.com/Nitesh99390/YouTube-/releases/tag/Hello0" class="download-btn" target="_blank" rel="noopener noreferrer">
+                Download Now
+            </a>
         </div>
-        <button class="start-btn" id="startBtn">IGNITION</button>
-    </div>
 
-    <div id="score-display">0</div>
-    <div id="hud" style="display: none;"><button class="control-btn" id="pauseBtn">⏸</button></div>
-
-    <div id="game-over-modal">
-        <div class="game-over-content">
-            <h1 style="color:#ff00ff; margin-bottom: 10px;">TOTALED!</h1>
-            <h2 id="finalScoreDisplay" style="margin-bottom: 20px;">SCORE: 0</h2>
-            <button class="start-btn" onclick="location.reload()">REBOOT</button>
+        <div class="features">
+            <div class="feature-box">
+                <h3>⚡ Fast & Lightweight</h3>
+                <p>Highly optimized code for smooth performance without slowing down your device.</p>
+            </div>
+            <div class="feature-box">
+                <h3>🔒 Open Source</h3>
+                <p>Transparent and secure. Downloaded directly from the trusted GitHub releases page.</p>
+            </div>
+            <div class="feature-box">
+                <h3>📱 Easy Setup</h3>
+                <p>Just download the package and you are ready to go in seconds.</p>
+            </div>
         </div>
-    </div>
+    </main>
 
-    <canvas id="gameCanvas"></canvas>
+    <footer>
+        <p>&copy; 2026 Nitesh. All rights reserved.</p>
+    </footer>
 
-    <script>
-        const CARS = [
-            { id: 'cyber', name: 'NEON-GT', color: '#00f2ff', speed: 5.5 },
-            { id: 'turbo', name: 'BOLT-X', color: '#ffff00', speed: 7 },
-            { id: 'tank', name: 'TITAN', color: '#00ff00', speed: 4.5 },
-            { id: 'phantom', name: 'WRAITH', color: '#ff00ff', speed: 6 },
-            { id: 'nexus', name: 'COBALT', color: '#ff8800', speed: 6.5 },
-            { id: 'nova', name: 'STELLAR', color: '#00ffff', speed: 5 }
-        ];
-
-        const DIFFICULTY = {
-            NORMAL: { spawnRate: 65, speedMult: 0.8 },
-            HARD: { spawnRate: 45, speedMult: 1.0 },
-            INSANE: { spawnRate: 30, speedMult: 1.2 }
-        };
-
-        let gameState = { selectedCar: 'cyber', selectedDifficulty: 'NORMAL', isRunning: false, game: null, isDragging: false };
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-
-        let lineOffset = 0;
-        let sidePillars = [];
-
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            if(gameState.game) gameState.game.player.y = canvas.height - 150;
-        }
-        window.addEventListener('resize', resize);
-        resize();
-
-        function initMenu() {
-            const selector = document.getElementById('carSelector');
-            selector.innerHTML = CARS.map(car => `
-                <div class="car-option" id="opt-${car.id}" onclick="selectCar('${car.id}')">
-                    <div style="height:30px; width:20px; background:${car.color}; margin:0 auto; border-radius:3px;"></div>
-                    <div class="car-name" style="font-size: 8px; color: #00f2ff; margin-top:5px;">${car.name}</div>
-                </div>
-            `).join('');
-            document.querySelectorAll('.difficulty-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.difficulty-btn').forEach(b => b.classList.remove('selected'));
-                    this.classList.add('selected');
-                    gameState.selectedDifficulty = this.dataset.difficulty;
-                });
-            });
-            document.getElementById('startBtn').addEventListener('click', startGame);
-            selectCar('cyber');
-        }
-
-        function selectCar(carId) {
-            gameState.selectedCar = carId;
-            document.querySelectorAll('.car-option').forEach(el => el.classList.remove('selected'));
-            document.getElementById('opt-' + carId).classList.add('selected');
-        }
-
-        function startGame() {
-            document.getElementById('menu').classList.add('menu-hidden');
-            document.getElementById('hud').style.display = 'block';
-            gameState.game = createGameInstance();
-            gameState.isRunning = true;
-            gameLoop();
-        }
-
-        function createGameInstance() {
-            const car = CARS.find(c => c.id === gameState.selectedCar);
-            const diff = DIFFICULTY[gameState.selectedDifficulty];
-            return {
-                car: car, score: 0, speed: car.speed * diff.speedMult,
-                gameActive: true, isPaused: false, frame: 0,
-                player: { x: canvas.width / 2 - 17, y: canvas.height - 150, w: 34, h: 65, targetX: canvas.width / 2 - 17 },
-                obstacles: []
-            };
-        }
-
-        function drawCyberCar(x, y, w, h, color, isPlayer = true) {
-            ctx.shadowBlur = 15;
-            ctx.shadowColor = color;
-            ctx.fillStyle = color;
-
-            // Main Body (Round Rect)
-            ctx.beginPath();
-            ctx.roundRect(x, y, w, h, 8);
-            ctx.fill();
-
-            // Cockpit (Kach)
-            ctx.fillStyle = "rgba(0,0,0,0.6)";
-            ctx.beginPath();
-            ctx.roundRect(x + 5, y + (isPlayer ? 15 : 35), w - 10, 20, 5);
-            ctx.fill();
-
-            // Headlights / Tail-lights
-            if (isPlayer) {
-                // Tail lights (Red) for player
-                ctx.shadowBlur = 10;
-                ctx.shadowColor = "red";
-                ctx.fillStyle = "red";
-                ctx.fillRect(x + 2, y + h - 5, 8, 3);
-                ctx.fillRect(x + w - 10, y + h - 5, 8, 3);
-            } else {
-                // Headlights (Yellow) for obstacles
-                ctx.shadowBlur = 10;
-                ctx.shadowColor = "#fff";
-                ctx.fillStyle = "#fff";
-                ctx.fillRect(x + 2, y + h - 5, 8, 3);
-                ctx.fillRect(x + w - 10, y + h - 5, 8, 3);
-            }
-        }
-
-        function handleInput(clientX) {
-            if (!gameState.game || !gameState.game.gameActive || gameState.game.isPaused) return;
-            gameState.game.player.targetX = clientX - gameState.game.player.w / 2;
-        }
-
-        canvas.addEventListener('mousedown', (e) => { gameState.isDragging = true; handleInput(e.clientX); });
-        window.addEventListener('mousemove', (e) => { if (gameState.isDragging) handleInput(e.clientX); });
-        window.addEventListener('mouseup', () => { gameState.isDragging = false; });
-        canvas.addEventListener('touchstart', (e) => { gameState.isDragging = true; handleInput(e.touches[0].clientX); e.preventDefault(); }, {passive: false});
-        canvas.addEventListener('touchmove', (e) => { if (gameState.isDragging) handleInput(e.touches[0].clientX); e.preventDefault(); }, {passive: false});
-        canvas.addEventListener('touchend', () => { gameState.isDragging = false; });
-
-        function update() {
-            const g = gameState.game;
-            if (!g.gameActive || g.isPaused) return;
-
-            lineOffset += g.speed * 1.5;
-            if (lineOffset > 100) lineOffset = 0;
-
-            if (g.frame % 20 === 0) {
-                sidePillars.push({ y: -50, side: 0 }, { y: -50, side: 1 });
-            }
-            for (let i = sidePillars.length - 1; i >= 0; i--) {
-                sidePillars[i].y += g.speed * 1.2;
-                if (sidePillars[i].y > canvas.height) sidePillars.splice(i, 1);
-            }
-
-            g.player.x += (g.player.targetX - g.player.x) * 0.15;
-            if(g.player.x < 0) g.player.x = 0;
-            if(g.player.x > canvas.width - g.player.w) g.player.x = canvas.width - g.player.w;
-
-            const spawnRate = DIFFICULTY[gameState.selectedDifficulty].spawnRate;
-            if (g.frame % spawnRate === 0) {
-                const laneWidth = canvas.width / 4;
-                const lane = Math.floor(Math.random() * 4);
-                g.obstacles.push({ x: (lane * laneWidth) + (laneWidth/2) - 17, y: -100, w: 34, h: 65 });
-            }
-
-            for (let i = g.obstacles.length - 1; i >= 0; i--) {
-                g.obstacles[i].y += g.speed;
-                if (g.player.x < g.obstacles[i].x + g.obstacles[i].w &&
-                    g.player.x + g.player.w > g.obstacles[i].x &&
-                    g.player.y < g.obstacles[i].y + g.obstacles[i].h &&
-                    g.player.y + g.player.h > g.obstacles[i].y) {
-                    g.gameActive = false;
-                    document.getElementById('finalScoreDisplay').textContent = "SCORE: " + g.score;
-                    document.getElementById('game-over-modal').style.display = 'flex';
-                }
-                if (g.obstacles[i].y > canvas.height) { g.obstacles.splice(i, 1); g.score += 10; g.speed += 0.005; }
-            }
-            g.frame++;
-        }
-
-        function draw() {
-            const g = gameState.game;
-            ctx.fillStyle = "#0a0015";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            const laneWidth = canvas.width / 4;
-
-            // Pillars
-            ctx.fillStyle = "#00f2ff";
-            sidePillars.forEach(p => {
-                const x = p.side === 0 ? 5 : canvas.width - 15;
-                ctx.fillRect(x, p.y, 10, 30);
-            });
-
-            // Road Lines
-            ctx.setLineDash([60, 40]);
-            ctx.lineDashOffset = -lineOffset;
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-            ctx.lineWidth = 3;
-            for(let i = 1; i < 4; i++) {
-                ctx.beginPath();
-                ctx.moveTo(i * laneWidth, 0);
-                ctx.lineTo(i * laneWidth, canvas.height);
-                ctx.stroke();
-            }
-            ctx.setLineDash([]);
-
-            // Draw Player Car
-            let vib = (Math.random() - 0.5) * (g.speed / 4);
-            drawCyberCar(g.player.x + vib, g.player.y + vib, g.player.w, g.player.h, g.car.color, true);
-
-            // Draw Obstacle Cars
-            g.obstacles.forEach(o => {
-                drawCyberCar(o.x, o.y, o.w, o.h, "#ff00ff", false);
-            });
-
-            ctx.shadowBlur = 0;
-            document.getElementById('score-display').textContent = g.score;
-        }
-
-        function gameLoop() {
-            if (gameState.isRunning) {
-                update(); draw(); requestAnimationFrame(gameLoop);
-            }
-        }
-
-        document.getElementById('pauseBtn').addEventListener('click', function() {
-            if (!gameState.game) return;
-            gameState.game.isPaused = !gameState.game.isPaused;
-            this.textContent = gameState.game.isPaused ? '▶' : '⏸';
-        });
-
-        initMenu();
-    </script>
 </body>
 </html>

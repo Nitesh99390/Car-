@@ -1,0 +1,18 @@
+# secrets & runtime
+.env
+*.session
+*.session-journal
+workspace_textbot/
+*.log
+*.sqlite3
+database.json
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# misc
+.DS_Store
